@@ -1,25 +1,28 @@
 import os
 
-os.environ["PATH"] += os.pathsep + r"C:\ffmpeg\ffmpeg\bin"  # Ensure ffmpeg is in the PATH
+os.environ["PATH"] += os.pathsep + r"C:\ffmpeg\ffmpeg\bin"
 
 from audio import extract_audio
 from Trans import transcribe
 from counter import count_word
 
 
-def process(video_path):
+def process(video_path, word):
     audio_path = extract_audio(video_path)
     text = transcribe(audio_path)
-    count = count_word(text, "so")
+    count = count_word(text, word)
 
-    print("\n--- RESULT ---")
-
-    print("\n--- RAW TRANSCRIPTION ---")
-    print(text)
-    print("------------------------")
-
-    print("Count of 'so':", count)
+    return text, count
 
 
 if __name__ == "__main__":
-    process("data/input.mp4") #👈 Update with your video path
+    video_path = input("Enter video path: ")
+    word = input("Enter word to count: ")
+
+    text, count = process(video_path, word)
+
+    print("\n--- RESULT ---")
+    print("\n--- RAW TRANSCRIPTION ---")
+    print(text)
+    print("------------------------")
+    print(f"Count of '{word}':", count)
