@@ -1,26 +1,26 @@
 # 🎥 AI Video Transcription & Word Frequency Analyzer
 
-A Python-based application that extracts audio from video, transcribes speech using AI, and analyzes the frequency of specific words (e.g., "so") through an interactive pipeline.
+A Python-based application that extracts audio from video, transcribes speech into text using AI, and analyzes the frequency of user-defined words through an interactive UI.
 
 ---
 
 ## 🚀 Features
 
 * 🎬 Extract audio from video files
-* 🧠 Convert speech to text using AI
+* 🧠 Convert speech to text using OpenAI Whisper
 * 🔍 Count frequency of user-defined words (case-insensitive)
-* 🧹 Handle punctuation using regex for accurate analysis
-* 💻 Interactive UI using Streamlit
+* 🧹 Handle punctuation using regex for accurate counting
+* 🌐 Interactive UI built with Streamlit
 
 ---
 
 ## 🧠 How It Works
 
-1. **Input Video** (`.mp4`)
-2. **Audio Extraction** → Converts video to `.wav` using FFmpeg
-3. **Transcription** → Converts audio to text using Whisper
-4. **Text Processing** → Cleans and splits words using regex
-5. **Word Analysis** → Counts occurrences of target word
+1. Input video (.mp4)
+2. Audio extraction using FFmpeg → converts to `.wav`
+3. Transcription using Whisper → converts audio to text
+4. Text processing using regex → cleans and normalizes text
+5. Word frequency analysis → counts occurrences of target word
 
 ---
 
@@ -30,13 +30,13 @@ A Python-based application that extracts audio from video, transcribes speech us
 * FFmpeg (audio extraction)
 * OpenAI Whisper (speech-to-text)
 * Streamlit (UI)
-* Regex (`re` module) for text processing
+* Regex (`re` module)
 
 ---
 
 ## 📁 Project Structure
 
-```id="0bcz3a"
+```
 video-word-frequency-analyzer/
 │
 ├── app/
@@ -46,9 +46,6 @@ video-word-frequency-analyzer/
 │   ├── Trans.py
 │   ├── counter.py
 │
-├── data/
-│   └── input.mp4
-│
 ├── requirements.txt
 ├── README.md
 ```
@@ -57,18 +54,18 @@ video-word-frequency-analyzer/
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
-```id="3e3p7r"
+```
 git clone https://github.com/your-username/video-word-frequency-analyzer.git
 cd video-word-frequency-analyzer
 ```
 
 ---
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
-```id="r7kpxg"
+```
 pip install -r requirements.txt
 ```
 
@@ -76,37 +73,41 @@ pip install -r requirements.txt
 
 ### 3. Install FFmpeg
 
-* Download FFmpeg
-* Add it to your system PATH
+Download FFmpeg and add it to your system PATH.
 
 ---
 
-### 4. Run the application
+## ▶️ Run the Project
 
-#### ▶️ CLI version
+### 🔹 Option 1: CLI Mode
 
-```id="jz36cv"
+```
 python app/main.py
 ```
 
-#### ▶️ UI version (recommended)
+---
 
-```id="0u3nbz"
+### 🔹 Option 2: Streamlit UI (Recommended)
+
+```
 python -m streamlit run app/ui.py
+```
+
+Then open in browser:
+
+```
+http://localhost:8501
 ```
 
 ---
 
 ## 📊 Example Output
 
-```id="q2h7dl"
---- RESULT ---
-
---- RAW TRANSCRIPTION ---
+```
+Transcription:
 so I was thinking so maybe so yeah
-------------------------
 
-Count of 'so': 3
+Count of "so": 3
 ```
 
 ---
@@ -139,10 +140,10 @@ Count of 'so': 3
 
 ## 👨‍💻 Author
 
-Developed during a Python Developer Internship to explore audio processing, AI transcription, and text analysis.
+Developed during a Python Developer Internship to explore audio processing, AI transcription, and full-stack application development.
 
 ---
 
 ## ⭐ Support
 
-If you found this project useful, consider giving it a star ⭐
+If you found this useful, give it a star ⭐ on GitHub!
