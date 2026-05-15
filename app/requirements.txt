@@ -2,3 +2,6 @@ streamlit
 openai-whisper
 ffmpeg-python
 torch
+numpy
+pandas
+scikit-learn
